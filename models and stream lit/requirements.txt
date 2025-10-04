@@ -1,7 +1,42 @@
-streamlit
-pandas
-numpy
-scikit-learn
-lightgbm
-matplotlib
-plotly
+# NASA Exoplanet AI Suite - Streamlit Deployment Requirements
+# Core dependencies for the Streamlit application
+
+# Core Streamlit Framework
+streamlit>=1.28.0
+
+# Data Manipulation and Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Machine Learning Libraries
+# Note: Models were trained with scikit-learn 1.7.1, but 1.7.2+ should work
+scikit-learn>=1.7.0
+joblib>=1.3.0
+xgboost>=1.7.0
+lightgbm>=4.0.0
+
+# Data Visualization
+plotly>=5.17.0
+
+# File Handling and Utilities
+# pathlib is built-in for Python 3.4+, no need for pathlib2
+
+# Standard Library (included with Python)
+# pickle - built-in
+# warnings - built-in
+
+# Optional: Enhanced Streamlit Components (uncomment if needed)
+# streamlit-option-menu>=0.3.6
+# streamlit-aggrid>=0.3.0
+# streamlit-plotly-events>=0.0.6
+
+# Development and Testing (optional - uncomment for development)
+# pytest>=7.0.0
+# black>=23.0.0
+# flake8>=6.0.0
+
+# Deployment Notes:
+# - All models have been tested and work with these dependencies
+# - Models use: LightGBM (Kepler, K2), XGBoost (TESS), HistGradientBoosting (104-input)
+# - Version warnings are expected due to model training with older scikit-learn version
+# - For production deployment, consider pinning exact versions for reproducibility
