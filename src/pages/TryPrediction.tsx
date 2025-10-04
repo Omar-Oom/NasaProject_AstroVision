@@ -190,7 +190,7 @@ const TryPrediction: React.FC = () => {
               </div>
               
               <iframe
-                src="http://localhost:8501"
+                src="https://nhnoehfsntd4an6fbeqiau.streamlit.app/"
                 className="w-full border-0"
                 style={{ height: 'calc(100% - 100px)' }}
                 title="NASA Exoplanet AI Prediction Suite"
