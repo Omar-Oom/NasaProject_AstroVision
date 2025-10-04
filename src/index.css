@@ -1,0 +1,228 @@
+/* Import Tailwind's default layers */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&display=swap');
+
+@tailwind base; /* Tailwind base styles (normalize + typography reset) */
+@tailwind components; /* Tailwind's component classes (predefined utilities) */
+@tailwind utilities; /* Tailwind's utility classes (margins, padding, colors, etc.) */
+
+:root {
+  --font-sans: 'Roboto Condensed', sans-serif;
+}
+
+/* ---------- GLOBAL CSS VARIABLES ---------- */
+:root {
+  /* Background colors */
+  --bg-primary: #0a0a0a; /* main background (black space) */
+  --bg-secondary: #1a1a2e; /* secondary dark blue */
+  --bg-tertiary: #16213e; /* deep space blue */
+
+  /* Text colors */
+  --text-primary: #ffffff; /* main white text */
+  --text-secondary: #e0e0e0; /* softer gray text */
+
+  /* Accent colors */
+  --accent-cyan: #00d4ff; /* glowing cyan */
+  --accent-magenta: #ff0080; /* glowing magenta (pink/purple) */
+  --accent-yellow: #ffd700; /* glowing golden yellow */
+}
+
+/* ---------- BASE STYLES ---------- */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    transition: all 0.5s ease;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 96px);
+  }
+
+  h2 {
+    font-size: clamp(24px, 5vw, 64px);
+  }
+
+  h3 {
+    font-size: clamp(20px, 4vw, 48px);
+  }
+
+  p, .lead {
+    font-weight: 400;
+    line-height: 1.6;
+  }
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes starfield {
+  /* Creates a starfield moving background effect */
+  0% {
+    background-position: 0 0, 40px 40px, 80px 80px, 120px 120px, 160px 160px;
+  }
+  100% {
+    background-position: -200px -200px, -160px -160px, -120px -120px,
+      -80px -80px, -40px -40px;
+  }
+}
+
+/* ---------- CUSTOM SLIDER STYLES ---------- */
+/* These apply to <input type="range"> */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent; /* remove default styles */
+  cursor: pointer;
+}
+
+/* Track (line) styling */
+.slider::-webkit-slider-track {
+  background: #1a1a2e; /* dark line */
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider::-moz-range-track {
+  background: #1a1a2e;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Thumb (circle button) styling */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(45deg, #0400ff, #00ff22); /* gradient color */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(43, 255, 0, 0.5); /* glowing effect */
+}
+
+.slider::-moz-range-thumb {
+  background: linear-gradient(45deg, #00d4ff, #ff0080); /* cyan → magenta */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* ---------- CUSTOM COMPONENTS (Tailwind layer) ---------- */
+@layer components {
+  /* Card design */
+  .card {
+    @apply bg-black/60 backdrop-blur-sm border border-white/20 rounded-2xl shadow-2xl;
+  }
+
+  /* Card hover glow */
+  .card-glow {
+    @apply hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300;
+  }
+
+  /* Primary button (cyan → magenta gradient) */
+  .btn-primary {
+    @apply bg-gradient-to-r from-space-cyan to-space-magenta text-space-black font-bold px-6 py-3 rounded-xl 
+           hover:shadow-[0_0_20px_rgba(0,212,255,0.5)] transition-all duration-300 transform hover:scale-105;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Secondary button (transparent border style) */
+  .btn-secondary {
+    @apply border border-white/30 text-white px-6 py-3 rounded-xl hover:bg-white/10 hover:text-white transition-all duration-300;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  /* Input fields */
+  .input-field {
+    @apply bg-black/70 border border-white/30 rounded-lg px-4 py-3 text-white placeholder-white/50 
+           focus:border-white/60 focus:ring-2 focus:ring-white/20 transition-all duration-300;
+  }
+
+  /* Text glow effects */
+  .text-glow {
+    @apply text-space-cyan drop-shadow-[0_0_10px_rgba(0,212,255,0.5)];
+  }
+
+  .text-glow-pink {
+    @apply text-space-magenta drop-shadow-[0_0_10px_rgba(255,0,128,0.5)];
+  }
+
+  .text-glow-yellow {
+    @apply text-space-yellow drop-shadow-[0_0_10px_rgba(255,215,0,0.5)];
+  }
+
+  /* ---------- BACKGROUND SECTIONS ---------- */
+  .bg-home {
+    background-image: linear-gradient(
+        rgba(10, 10, 10, 0.4),
+        rgba(10, 10, 10, 0.4)
+      ),
+      /* dark overlay */ url("/assets/images/backgrounds/home background.png"); /* homepage background */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .bg-explorer {
+    background-image: linear-gradient(
+        rgba(10, 10, 10, 0.5),
+        rgba(10, 10, 10, 0.5)
+      ),
+      url("/assets/images/backgrounds/explore background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .bg-about {
+    background-image: linear-gradient(
+        rgba(10, 10, 10, 0.6),
+        rgba(10, 10, 10, 0.6)
+      ),
+      url("/assets/images/logos/teamlogo.png"); /* used for "About" section */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .bg-upload {
+    background-image: linear-gradient(
+        rgba(10, 10, 10, 0.5),
+        rgba(10, 10, 10, 0.5)
+      ),
+      url("/assets/images/backgrounds/upload and dashboard background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .bg-dashboard {
+    background-image: linear-gradient(
+        rgba(10, 10, 10, 0.5),
+        rgba(10, 10, 10, 0.5)
+      ),
+      url("/assets/images/backgrounds/upload and dashboard background.jpg"); /* same as upload */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+}
