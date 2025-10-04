@@ -156,7 +156,7 @@ const TryPrediction: React.FC = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <a
-                    href="http://localhost:8501"
+                    href="https://nhnoehfsntd4an6fbeqiau.streamlit.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-3 py-1.5 bg-white text-black font-semibold rounded-lg transition-all duration-300 hover:bg-gray-200 hover:scale-105 text-sm"
