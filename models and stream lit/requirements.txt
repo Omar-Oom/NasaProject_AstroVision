@@ -1,40 +1,7 @@
-# NASA Exoplanet AI Suite - Streamlit App Requirements
-# ======================================================
-
-
-# Data Processing and Analysis
-pandas>=2.0.0
-numpy>=1.24.0
-
-# Machine Learning Libraries
-scikit-learn>=1.3.0
-joblib>=1.3.0
-xgboost>=1.7.0
-
-# Data Visualization
-plotly>=5.17.0
-matplotlib>=3.7.0
-seaborn>=0.12.0
-
-# File I/O and Data Formats
-openpyxl>=3.1.0          # For reading Excel files (Data_Full.xlsx)
-xlrd>=2.0.0              # For reading older Excel formats
-csv                        # Built-in CSV support
-
-# Performance and Caching
-cachetools>=5.3.0
-
-# Optional Enhanced Features
-streamlit-aggrid>=0.3.0   # Enhanced data tables
-streamlit-plotly-events>=0.0.6  # Interactive plotly events
-
-# System and Path Utilities (Built-in, but listed for clarity)
-pathlib                    # For file path handling
-os                         # For operating system interface
-sys                        # For system-specific parameters
-
-# Installation Instructions:
-# pip install -r requirements.txt
-# 
-# For development with optional features:
-# pip install -r requirements.txt --upgrade
+streamlit
+pandas
+numpy
+scikit-learn
+lightgbm
+plotly
+matplotlib
