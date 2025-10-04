@@ -1,0 +1,48 @@
+model,best_cv_score,best_params,test_auc,test_accuracy,estimator,cv_std
+LightGBM,0.8826129825064187,"{'feature_fraction': np.float64(0.6873687420594126), 'learning_rate': np.float64(0.01673808578875214), 'n_estimators': 219, 'num_leaves': 47}",0.8866673667486485,0.743205574912892,"LGBMClassifier(feature_fraction=np.float64(0.6873687420594126),
+               learning_rate=np.float64(0.01673808578875214), n_estimators=219,
+               n_jobs=-1, num_leaves=47, random_state=42)",0.002024562223472963
+HistGradientBoosting,0.8808347295912572,"{'learning_rate': np.float64(0.029106359131330698), 'max_depth': None, 'max_iter': 120}",0.8859945244925745,0.7407665505226481,"HistGradientBoostingClassifier(learning_rate=np.float64(0.029106359131330698),
+                               max_iter=120, random_state=42)",0.002468334447863661
+GradientBoosting,0.8801218756902219,"{'learning_rate': np.float64(0.037183641805732096), 'max_depth': 5, 'n_estimators': 157, 'subsample': np.float64(0.7542703315240835)}",0.885671532838929,0.740418118466899,"GradientBoostingClassifier(learning_rate=np.float64(0.037183641805732096),
+                           max_depth=5, n_estimators=157, random_state=42,
+                           subsample=np.float64(0.7542703315240835))",0.0014819719601934487
+XGBoost,0.8809332055410217,"{'colsample_bytree': np.float64(0.6174250836504598), 'learning_rate': np.float64(0.05399484409787434), 'max_depth': 6, 'n_estimators': 153}",0.8843725004238706,0.7362369337979094,"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=np.float64(0.6174250836504598), device=None,
+              early_stopping_rounds=None, enable_categorical=False,
+              eval_metric='logloss', feature_types=None, feature_weights=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None,
+              learning_rate=np.float64(0.05399484409787434), max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=6, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=153, n_jobs=-1,
+              num_parallel_tree=None, ...)",0.0023607259978128004
+RandomForest,0.8776117696492053,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 7, 'n_estimators': 285}",0.8784065231469601,0.7372822299651568,"RandomForestClassifier(min_samples_split=7, n_estimators=285, n_jobs=-1,
+                       random_state=42)",0.00328198451796822
+ExtraTrees,0.8712222100251283,"{'max_depth': 20, 'max_features': None, 'n_estimators': 142}",0.8732015169843644,0.724390243902439,"ExtraTreesClassifier(max_depth=20, max_features=None, n_estimators=142,
+                     n_jobs=-1, random_state=42)",0.002390989621235485
+MLP,0.8433331908034541,"{'clf__learning_rate_init': 0.001, 'clf__hidden_layer_sizes': (100,), 'clf__alpha': 1e-05}",0.85005808303095,0.7111498257839721,"Pipeline(steps=[('scaler', StandardScaler()),
+                ('clf',
+                 MLPClassifier(alpha=1e-05, max_iter=500, random_state=42))])",0.006207883647060122
+AdaBoost,0.829199728798146,"{'learning_rate': np.float64(0.6111150117432088), 'n_estimators': 180}",0.8363725510535155,0.6871080139372823,"AdaBoostClassifier(learning_rate=np.float64(0.6111150117432088),
+                   n_estimators=180, random_state=42)",0.004083529310940991
+SVC,0.8259466807501933,"{'clf__C': np.float64(17.12337597316399), 'clf__degree': 2, 'clf__gamma': 'auto', 'clf__kernel': 'rbf'}",0.8297772841876361,0.6916376306620209,"Pipeline(steps=[('scaler', StandardScaler()),
+                ('clf',
+                 SVC(C=np.float64(17.12337597316399), degree=2, gamma='auto',
+                     probability=True))])",0.009018488139626754
+KNN,0.813941349561127,"{'clf__n_neighbors': 16, 'clf__p': 1, 'clf__weights': 'distance'}",0.8223098893998294,0.6843205574912892,"Pipeline(steps=[('scaler', StandardScaler()),
+                ('clf',
+                 KNeighborsClassifier(n_neighbors=16, p=1,
+                                      weights='distance'))])",0.004074260221755066
+LogisticRegression,0.8145121717562128,"{'clf__C': np.float64(659.871107205407), 'clf__penalty': 'l2'}",0.821996356613348,0.6749128919860627,"Pipeline(steps=[('scaler', StandardScaler()),
+                ('clf',
+                 LogisticRegression(C=np.float64(659.871107205407),
+                                    max_iter=500, multi_class='ovr',
+                                    solver='liblinear'))])",0.002336292169241894
+DecisionTree,0.8120893592779795,"{'max_depth': 10, 'max_features': None, 'min_samples_split': 9}",0.8199720939506122,0.694425087108014,"DecisionTreeClassifier(max_depth=10, min_samples_split=9, random_state=42)",0.006690950285009112
+QDA,0.784584693913175,{},0.7841702275151986,0.5498257839721254,QuadraticDiscriminantAnalysis(),0.004319119651822333
+LDA,0.7752309065593633,{},0.7784440670179462,0.632404181184669,LinearDiscriminantAnalysis(),0.004243253935409888
+GaussianNB,0.7669924078099194,{},0.7680804003887909,0.5320557491289198,GaussianNB(),0.007674044228686564
